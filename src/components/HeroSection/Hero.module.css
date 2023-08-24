@@ -1,0 +1,31 @@
+.mainHero {
+    height: 270px;
+    flex-shrink: 0;
+    background: var(--color-black);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.heroImage {
+    width: 212px;
+    height: 212px;
+    align-self: center;
+    color: var(--color-primary);
+}
