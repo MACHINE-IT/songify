@@ -2,8 +2,8 @@ import { CircularProgress } from '@mui/material';
 import Card from '../Card/Card';
 import React, { useState } from 'react';
 import styles from './Section.module.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Carousel from '../Carousel/Carousel';
+
 
 const Section = ({ title, data, type, filter }) => {
 
@@ -32,7 +32,7 @@ const Section = ({ title, data, type, filter }) => {
                                 ))}
                             </div>
                         ) : (
-                            <></>
+                            <Carousel data={data} renderCardComponent={(item) => { <Card data={item} type={type} /> }} />
                         )}
                     </div>
                 )
