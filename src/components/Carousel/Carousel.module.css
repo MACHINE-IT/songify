@@ -8,6 +8,7 @@
     top: 40px;
     transform: translateY(-50%);
     z-index: 10;
+    cursor: pointer;
 }
 
 .rightNavigation {
@@ -16,4 +17,5 @@
     top: 40px;
     transform: translateY(-50%);
     z-index: 10;
+    cursor: pointer;
 }

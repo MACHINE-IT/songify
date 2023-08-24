@@ -1,6 +1,5 @@
 import axios from "axios";
-
-export const BACKEND_ENDPOINT = 'https://qtify-backend-labs.crio.do';
+import { BACKEND_ENDPOINT } from './apiEndpoint';
 
 export const fetchTopAlbums = async () => {
     console.log('got inside start of fetchTopAlbums')
