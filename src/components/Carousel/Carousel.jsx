@@ -14,25 +14,25 @@ const Controls = ({ data }) => {
     console.log(swiper);
 
     useEffect(() => {
-        swiper.slideTo(0, 1);
+        swiper.slideTo(0, 0);
     }, [data, slideTo]);
 
     return <></>;
 }
 
 const Carousel = ({ data, renderCardComponent }) => {
-    const swiperParams = {
-        modules: [Navigation],
-        slidesPerView: 'auto',
-        spaceBetween: 40,
-        allowTouchMove: true,
-    };
+    // const swiperParams = {
+    //     modules: [Navigation],
+    //     slidesPerView: 'auto',
+    //     spaceBetween: 40,
+    //     allowTouchMove: true,
+    // };
 
     return (
         <div className={styles.wrapper}>
-            {/* <Swiper initialSlide={0} modules={{ Navigation }} slidesPerView={"auto"} spaceBetween={40} allowTouchMove> */}
-            <Swiper {...swiperParams}>
-                <Controls swiper={swiperParams} data={data} />
+            <Swiper initialSlide={0} modules={[Navigation]} slidesPerView="auto" spaceBetween={40} allowTouchMove>
+                {/* <Swiper {...swiperParams}> */}
+                <Controls data={data} />
                 <CarouselLeftNavigation />
                 <CarouselRightNavigation />
                 {
