@@ -1,0 +1,7 @@
+.tab {
+    color: var(--color-white) !important;
+}
+
+.selectedTabIndicator {
+    background-color: var(--color-primary) !important;
+}

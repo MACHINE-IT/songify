@@ -1,8 +1,8 @@
 import axios from "axios";
 import { BACKEND_ENDPOINT } from './apiEndpoint';
 
-
 export const fetchNewAlbums = async () => {
+    console.log('got inside start of fetchTopAlbums')
     try {
         const res = await axios.get(`${BACKEND_ENDPOINT}/albums/new`);
         console.log("API Response:", res.data);
@@ -12,3 +12,4 @@ export const fetchNewAlbums = async () => {
     }
     console.log("Fetch completed.");
 }
+

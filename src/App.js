@@ -1,25 +1,22 @@
-import { fetchTopAlbums } from "./Api/apiTopAlbums";
 import { fetchNewAlbums } from "./Api/apiNewAlbums";
+import { TopAlbums, fetchTopAlbums } from "./AlbumsData/TopAlbums/TopAlbums";
 import Hero from "./components/HeroSection/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Section from "./components/Section/Section";
 import { useEffect, useState } from "react";
 import styles from './App.module.css';
+import SongsTabsFilter from "./components/SongsTabsFilterSection/SongsTabsFilter";
+import { AllSongs } from "./SongsData/AllSongs/AllSongs";
+import SongsGenres from "./SongsData/SongsGenres";
+import { NewAlbums } from "./AlbumsData/NewAlbums/NewAlbums";
+import FAQs from "./components/FAQs/FAQs";
 
 
 function App() {
   const [topAlbumData, setTopAlbumData] = useState([]);
   const [newAlbumData, setNewAlbumData] = useState([]);
 
-  const generateTopAlbumData = async () => {
-    try {
-      const data = await fetchTopAlbums();
-      console.log(data);
-      setTopAlbumData(data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
+
 
   const generateNewAlbumData = async () => {
     try {
@@ -34,18 +31,27 @@ function App() {
 
 
   useEffect(() => {
-    generateTopAlbumData();
+    fetchTopAlbums();
     generateNewAlbumData();
   }, []);
 
+  const handleTopAlbumsData = (data) => {
+    setTopAlbumData(data);
+  }
 
   return (
     <>
       <Navbar />
       <Hero />
       <div className={styles.sectionWrapper}>
-        <Section type="album" title="Top Albums" data={topAlbumData} />
-        <Section type="album" title="New Albums" data={newAlbumData} />
+        <TopAlbums />
+        <NewAlbums />
+        {/* <Section type="album" title="Top Albums" data={topAlbumData} /> */}
+        {/* <Section type="album" title="New Albums" data={newAlbumData} /> */}
+        <hr className={styles.hrLine} />
+        <SongsGenres />
+        <hr className={styles.hrLine} />
+        <FAQs />
       </div>
     </>
   );
