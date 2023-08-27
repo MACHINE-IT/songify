@@ -1,5 +1,37 @@
-.faqParent {
+.faqContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    align-self: center;
+}
+
+.faqHeader {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 10px;
+}
+
+.accordion {
+    margin-bottom: 10px;
+    border-radius: 6px !important;
+}
+
+.accordionQuestion {
+    border-radius: 6px !important;
+    border-color: var(--color-white) !important;
+    background-color: var(--color-black) !important;
+    color: var(--color-white) !important;
+}
+
+.accordionExpandMoreIcon {
+    color: var(--color-primary) !important;
+}
+
+.accordionAnswer {}
+
+.faqContainer .accordion {
+    border-radius: 6px !important;
+    border: 1px solid white;
+    /* Set border to white color */
 }
